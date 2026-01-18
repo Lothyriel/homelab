@@ -1,0 +1,15 @@
+[Unit]
+Description=Nginx proxy manager
+PartOf=main.pod
+After=main.pod
+
+[Container]
+Pod=main.pod
+ContainerName=npm
+Image=docker.io/jc21/nginx-proxy-manager:latest
+Volume=/home/jx/npm/data:/data:Z
+Volume=/home/jx/npm/letsencrypt:/etc/letsencrypt:Z
+
+[Service]
+Restart=always
+CPUWeight=200

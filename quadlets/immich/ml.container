@@ -1,0 +1,27 @@
+[Unit]
+Description=Immich Machine Learning
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Pod=immich.pod
+ContainerName=immich_machine_learning
+Image=ghcr.io/immich-app/immich-machine-learning:v2
+
+Volume=immich-model-cache:/cache
+
+AddDevice=/dev/dri:/dev/dri:rwm
+
+Environment=NEOReadDebugKeys=1
+Environment=OverrideGpuAddressSpace=48
+
+[Service]
+Restart=always
+DeviceAllow=/dev/dri/* rwm
+
+CPUQuota=200%
+CPUWeight=1
+
+
+[Install]
+WantedBy=default.target

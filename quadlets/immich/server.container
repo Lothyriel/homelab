@@ -1,0 +1,26 @@
+[Unit]
+Description=Immich Server
+After=network-online.target immich-redis.service immich-postgres.service
+Wants=network-online.target
+
+[Container]
+Pod=immich.pod
+ContainerName=immich_server
+Image=ghcr.io/immich-app/immich-server:v2
+
+Volume=/photos/library:/data:Z
+Volume=/photos/ext:/photos:Z
+Volume=/etc/localtime:/etc/localtime:ro
+
+EnvironmentFile=.env
+Environment=DB_USERNAME=postgres
+Environment=DB_DATABASE_NAME=immich
+Environment=DB_HOSTNAME=localhost
+Environment=REDIS_HOSTNAME=localhost
+
+[Service]
+TimeoutStartSec=900
+CPUWeight=50
+
+[Install]
+WantedBy=default.target

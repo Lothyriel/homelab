@@ -1,0 +1,15 @@
+[Unit]
+Description=Cloudflared Tunnel
+PartOf=main.pod
+After=main.pod
+
+[Container]
+Pod=main.pod
+Image=docker.io/cloudflare/cloudflared:latest
+ContainerName=cloudflared
+EnvironmentFile=.env
+
+Exec=tunnel --no-autoupdate run
+
+[Service]
+CPUWeight=150

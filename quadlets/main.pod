@@ -1,0 +1,14 @@
+[Unit]
+Description=Pod for: npm | qbit | jellyfin | cloudflare tunnel
+After=network-online.target
+Wants=network-online.target
+
+[Install]
+WantedBy=default.target
+
+[Pod]
+PodName=main
+PublishPort=80:80
+PublishPort=443:443
+PublishPort=[::]:6881:6881/tcp
+PublishPort=[::]:6881:6881/udp

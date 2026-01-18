@@ -1,0 +1,9 @@
+[Unit]
+Description=LG Dev Mode reset for %i
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/.config/lg_renew/%i.env
+
+ExecStart=/usr/bin/curl -s -X GET \
+  "https://developer.lge.com/secure/ResetDevModeSession.dev?sessionToken=${SESSION_TOKEN}"

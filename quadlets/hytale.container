@@ -1,0 +1,18 @@
+[Unit]
+Description=Hytale Server
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Image=ghcr.io/godstepx/docker-hytale-server:latest
+ContainerName=hytale
+
+Environment=JAVA_XMX=8g
+Environment=USE_AOT_CACHE=true
+Environment=ENABLE_BACKUPS=true
+Environment=BACKUP_FREQUENCY=60
+
+PublishPort=5520:5520/udp
+
+Volume=/home/jx/hytale:/data:Z
+Volume=/etc/machine-id:/etc/machine-id:ro
