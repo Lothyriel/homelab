@@ -3,6 +3,7 @@ Description=LG Dev Mode reset for %i
 
 [Service]
 Type=oneshot
+# to add a new instance of the template timer: create a {NAME}.env file in this location containing the CF_API_TOKEN variable
 EnvironmentFile=%h/.config/lg_renew/%i.env
 
 ExecStart=/usr/bin/curl -s -X GET \
