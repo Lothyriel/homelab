@@ -4,7 +4,6 @@ PartOf=main.pod
 After=main.pod
 
 [Container]
-Pod=main.pod
 Image=docker.io/cloudflare/cloudflared:latest
 ContainerName=cloudflared
 EnvironmentFile=.env
