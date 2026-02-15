@@ -1,0 +1,12 @@
+[Unit]
+Description=Pocket Planner Pod
+After=network-online.target
+Wants=network-online.target
+
+[Pod]
+PodName=pocket-planner
+
+PublishPort=8081:8081
+
+[Install]
+WantedBy=default.target

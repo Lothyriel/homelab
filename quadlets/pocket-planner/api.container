@@ -1,0 +1,25 @@
+[Unit]
+Description=Pocket Planner api
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Pod=pocket-planner.pod
+ContainerName=pocket-planner-api
+Image=ghcr.io/lothyriel/pocketplanner-api:latest
+AutoUpdate=registry
+
+Volume=/home/jx/pocket-planner:/data:Z
+
+EnvironmentFile=.env
+Environment=G_CLIENT_IDS=824653628296-idlah1hdlcjpmeb8310l0ipeo12li5tu.apps.googleusercontent.com
+Environment=SECURE_ENV=true
+Environment=DATABASE_PATH="/data/pocket-planner.db"
+
+[Service]
+Restart=always
+TimeoutStartSec=60
+CPUWeight=50
+
+[Install]
+WantedBy=default.target
