@@ -12,9 +12,11 @@ AutoUpdate=registry
 Volume=/home/jx/pocket-planner:/data:Z
 
 EnvironmentFile=.env
-Environment=G_CLIENT_IDS=824653628296-idlah1hdlcjpmeb8310l0ipeo12li5tu.apps.googleusercontent.com
+Environment=G_CLIENT_ID=824653628296-idlah1hdlcjpmeb8310l0ipeo12li5tu.apps.googleusercontent.com
 Environment=SECURE_ENV=true
 Environment=DATABASE_PATH="/data/pocket-planner.db"
+Environment=JWT_ACCESS_TTL="900"
+Environment=JWT_REFRESH_TTL="2592000"
 
 [Service]
 Restart=always
