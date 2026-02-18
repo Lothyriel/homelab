@@ -1,3 +1,5 @@
+# we keep cloudflared container outside of main pod to avoid pasta MTU and VPN tunnel issues
+
 [Unit]
 Description=Cloudflared Tunnel
 PartOf=main.pod
