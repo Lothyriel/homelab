@@ -1,13 +1,13 @@
 [Unit]
 Description=qBittorrent-nox
-PartOf=main.pod
-After=main.pod
+PartOf=media.pod
+After=media.pod
 
 [Container]
-Pod=main.pod
+Pod=media.pod
 ContainerName=qbit
 Image=docker.io/qbittorrentofficial/qbittorrent-nox:latest
-Volume=/home/jx/qbit/config:/config:Z
+Volume=%h/qbit/config:/config:Z
 Volume=/media0:/media0:z
 Volume=/media1:/media1:z
 Environment=PUID=0

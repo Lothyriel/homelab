@@ -7,8 +7,8 @@ After=main.pod
 Pod=main.pod
 ContainerName=npm
 Image=docker.io/jc21/nginx-proxy-manager:latest
-Volume=/home/jx/npm/data:/data:Z
-Volume=/home/jx/npm/letsencrypt:/etc/letsencrypt:Z
+Volume=%h/npm/data:/data:Z
+Volume=%h/npm/letsencrypt:/etc/letsencrypt:Z
 
 [Service]
 Restart=always

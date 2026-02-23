@@ -14,3 +14,6 @@ Exec=tunnel --no-autoupdate run
 
 [Service]
 CPUWeight=150
+
+[Install]
+WantedBy=default.target

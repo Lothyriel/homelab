@@ -1,0 +1,16 @@
+[Unit]
+Description=Main pod
+After=network-online.target
+Wants=network-online.target
+
+[Install]
+WantedBy=default.target
+
+[Pod]
+PodName=main
+
+# nginx
+PublishPort=80:80/tcp
+PublishPort=443:443
+# qbittorrent passthrough
+PublishPort=6881:6881

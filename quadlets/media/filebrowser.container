@@ -1,20 +1,20 @@
 [Unit]
 Description=Filebrowser
-PartOf=main.pod
-After=main.pod
+PartOf=media.pod
+After=media.pod
 
 [Container]
-Pod=main.pod
+Pod=media.pod
 ContainerName=filebrowser
 Image=docker.io/filebrowser/filebrowser:s6
 
 Environment=PUID=0
 Environment=PGID=0
 
-Volume=/home/jx/filebrowser/data:/srv:Z
+Volume=%h/filebrowser/data:/srv:Z
 Volume=/media0:/srv/media:z
-Volume=/home/jx/filebrowser/database:/database:Z
-Volume=/home/jx/filebrowser/config:/config:Z
+Volume=%h/filebrowser/database:/database:Z
+Volume=%h/filebrowser/config:/config:Z
 
 [Service]
 Restart=always

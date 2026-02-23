@@ -1,0 +1,17 @@
+[Unit]
+Description=Media pod
+After=network-online.target
+Wants=network-online.target
+
+[Install]
+WantedBy=default.target
+
+[Pod]
+PodName=media
+
+# filebrowser
+PublishPort=9100:9100
+# jellyfin
+PublishPort=8096:8096
+# qBittorrent
+PublishPort=8080:8080
