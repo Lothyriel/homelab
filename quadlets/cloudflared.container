@@ -6,8 +6,9 @@ PartOf=main.pod
 After=main.pod
 
 [Container]
-Image=docker.io/cloudflare/cloudflared:latest
 ContainerName=cloudflared
+Image=docker.io/cloudflare/cloudflared:latest
+AutoUpdate=registry
 EnvironmentFile=.env
 
 Exec=tunnel --no-autoupdate run
