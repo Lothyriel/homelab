@@ -1,0 +1,14 @@
+# go2rtc.container
+[Unit]
+Description=go2rtc container
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Pod=camera.pod
+Image=ghcr.io/alexxit/go2rtc:latest
+ContainerName=go2rtc
+
+EnvironmentFile=.env
+
+Volume=./go2rtc.yaml:/config/go2rtc.yaml:ro,Z

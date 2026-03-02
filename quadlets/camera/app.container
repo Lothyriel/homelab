@@ -1,0 +1,13 @@
+[Unit]
+Description=cam-rs api
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Pod=camera.pod
+ContainerName=cam-rs
+Image=ghcr.io/lothyriel/cam_rs:latest
+
+EnvironmentFile=.env
+
+AutoUpdate=registry

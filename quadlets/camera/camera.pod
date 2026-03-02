@@ -1,0 +1,15 @@
+[Unit]
+Description=Camera pod
+After=network-online.target
+Wants=network-online.target
+
+[Install]
+WantedBy=default.target
+
+[Pod]
+PodName=camera
+
+# go2rtc
+PublishPort=1984:1984
+# app
+PublishPort=5000:5000

@@ -1,0 +1,6 @@
+api:
+  listen: ":1984"
+
+streams:
+  cam:
+    - ${RTSP_URL}
