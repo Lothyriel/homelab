@@ -9,7 +9,7 @@ ContainerName=pocket-planner-api
 Image=ghcr.io/lothyriel/pocketplanner-api:latest
 AutoUpdate=registry
 
-Volume=/home/jx/pocket-planner:/data:Z
+Volume=%h/pocket-planner:/data:Z
 
 EnvironmentFile=.env
 Environment=G_CLIENT_ID=824653628296-idlah1hdlcjpmeb8310l0ipeo12li5tu.apps.googleusercontent.com
