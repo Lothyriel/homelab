@@ -15,3 +15,11 @@ PublishPort=9100:9100
 PublishPort=8096:8096
 # qBittorrent
 PublishPort=8080:8080
+# prowlarr
+PublishPort=9696:9696
+# radarr
+PublishPort=7878:7878
+# sonarr
+PublishPort=8989:8989
+# bazarr
+PublishPort=6767:6767
