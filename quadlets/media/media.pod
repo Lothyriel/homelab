@@ -23,3 +23,5 @@ PublishPort=7878:7878
 PublishPort=8989:8989
 # bazarr
 PublishPort=6767:6767
+# byparr
+PublishPort=8191:8191
