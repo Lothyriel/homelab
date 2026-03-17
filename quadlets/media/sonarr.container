@@ -9,7 +9,7 @@ Image=lscr.io/linuxserver/sonarr:latest
 ContainerName=sonarr
 
 Volume=%h/arr/sonarr:/config:Z
-Volume=%h/arr/downloads:/downloads:z
+Volume=/data/media/downloads:/downloads:z
 Volume=/data/media/shows:/shows:z
 
 Environment=PUID=0

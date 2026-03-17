@@ -9,7 +9,7 @@ Image=lscr.io/linuxserver/radarr:latest
 ContainerName=radarr
 
 Volume=%h/arr/radarr:/config:Z
-Volume=%h/arr/downloads:/downloads:z
+Volume=/data/media/downloads:/downloads:z
 Volume=/data/media/movies:/movies:z
 
 Environment=PUID=0

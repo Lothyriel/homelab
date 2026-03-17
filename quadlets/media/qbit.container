@@ -9,7 +9,7 @@ ContainerName=qbit
 Image=docker.io/qbittorrentofficial/qbittorrent-nox:latest
 AutoUpdate=registry
 Volume=%h/qbit/config:/config:Z
-Volume=%h/arr/downloads:/downloads:z
+Volume=/data/media/downloads:/downloads:z
 Volume=/data/media:/media:z
 Environment=PUID=0
 Environment=PGID=0
