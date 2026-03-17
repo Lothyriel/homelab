@@ -10,8 +10,7 @@ ContainerName=radarr
 
 Volume=%h/arr/radarr:/config:Z
 Volume=%h/arr/downloads:/downloads:z
-Volume=/media0/movies:/movies0:z
-Volume=/media1/movies:/movies1:z
+Volume=/data/media/movies:/movies:z
 
 Environment=PUID=0
 Environment=PGID=0

@@ -12,7 +12,7 @@ Environment=PUID=0
 Environment=PGID=0
 
 Volume=%h/filebrowser/data:/srv:Z
-Volume=/media0:/srv/media:z
+Volume=/data/media:/srv/data/media:z
 Volume=%h/filebrowser/database:/database:Z
 Volume=%h/filebrowser/config:/config:Z
 

@@ -10,8 +10,7 @@ ContainerName=sonarr
 
 Volume=%h/arr/sonarr:/config:Z
 Volume=%h/arr/downloads:/downloads:z
-Volume=/media0/shows:/shows0:z
-Volume=/media1/shows:/shows1:z
+Volume=/data/media/shows:/shows:z
 
 Environment=PUID=0
 Environment=PGID=0
