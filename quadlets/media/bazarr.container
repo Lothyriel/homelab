@@ -9,8 +9,7 @@ Image=lscr.io/linuxserver/bazarr:latest
 ContainerName=bazarr
 
 Volume=%h/arr/bazarr:/config:Z
-Volume=/data/media/movies:/movies:z
-Volume=/data/media/shows:/shows:z
+Volume=/data/media:/media:z
 
 Environment=PUID=0
 Environment=PGID=0
