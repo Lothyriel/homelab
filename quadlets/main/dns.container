@@ -1,0 +1,15 @@
+[Unit]
+Description=CoreDNS Server
+PartOf=media.pod
+After=media.pod
+
+[Container]
+Pod=main.pod
+ContainerName=dns
+Image=docker.io/coredns/coredns:latest
+
+Volume=./Corefile:/Corefile:ro,Z
+
+[Service]
+Restart=always
+CPUWeight=50
