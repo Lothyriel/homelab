@@ -9,6 +9,7 @@ ContainerName=dns
 Image=docker.io/coredns/coredns:latest
 
 Volume=./Corefile:/Corefile:ro,Z
+Volume=./blocklist.hosts:/etc/coredns/blocklist.hosts:ro,Z
 
 [Service]
 Restart=always

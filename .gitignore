@@ -2,3 +2,4 @@
 !.env.example
 
 timers/*.target.wants/*
+/quadlets/main/blocklist.hosts
