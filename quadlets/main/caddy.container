@@ -16,7 +16,7 @@ Volume=%h/caddy/config:/config:Z
 # Optional: map web root if you serve static files
 # Volume=%h/caddy/www:/srv:Z
 
-EnvironmentFile=.env
+EnvironmentFile=%h/homelab/.env
 
 [Service]
 Restart=always

@@ -11,7 +11,7 @@ Image=docker.io/coredns/coredns:latest
 Volume=./Corefile:/Corefile:ro,Z
 Volume=./blocklist.hosts:/etc/coredns/blocklist.hosts:ro,Z
 
-EnvironmentFile=.env
+EnvironmentFile=%h/homelab/.env
 
 [Service]
 Restart=always

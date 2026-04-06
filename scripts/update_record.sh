@@ -2,7 +2,7 @@
 set -eu
 
 # Load secret
-. "$HOME/homelab/scripts/cloudflare/.env"
+. "$HOME/homelab/.env"
 
 RECORD_ID="$1"
 NAME="$2"

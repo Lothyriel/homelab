@@ -1,4 +1,4 @@
-ENV_FILE="$HOME/homelab/quadlets/main/.env"
+ENV_FILE="$HOME/homelab/.env"
 PREFIX=$("$HOME/homelab/scripts/ip_prefix.sh")
 
 sed -i "s|^IPV6_PREFIX=.*|IPV6_PREFIX=$PREFIX|" "$ENV_FILE"
