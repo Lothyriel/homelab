@@ -14,7 +14,7 @@ curl -fsS \
   "https://api.cloudflare.com/client/v4/zones/5074610c453525d5514da0c7145a9b28/dns_records/$RECORD_ID" \
   -X PUT \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer $CF_API_TOKEN" \
+  -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
   -d "{
         \"name\": \"$NAME\",
         \"ttl\": 1,
