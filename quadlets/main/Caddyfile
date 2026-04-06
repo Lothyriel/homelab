@@ -32,7 +32,7 @@ qbit.loty.click {
 
 cockpit.loty.click {
     import local_only
-    reverse_proxy 10.0.0.10:9090 {
+    reverse_proxy https://10.0.0.10:9090 {
         transport http {
             tls_insecure_skip_verify
         }
