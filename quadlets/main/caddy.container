@@ -1,0 +1,23 @@
+[Unit]
+Description=Caddy
+PartOf=main.pod
+After=main.pod
+
+[Container]
+Pod=main.pod
+ContainerName=caddy
+
+Image=docker.io/caddybuilds/caddy-cloudflare:latest
+AutoUpdate=registry
+
+Volume=%h/homelab/quadlets/main/Caddyfile:/etc/caddy/Caddyfile:Z
+Volume=%h/caddy/data:/data:Z
+Volume=%h/caddy/config:/config:Z
+# Optional: map web root if you serve static files
+# Volume=%h/caddy/www:/srv:Z
+
+EnvironmentFile=.env
+
+[Service]
+Restart=always
+CPUWeight=200

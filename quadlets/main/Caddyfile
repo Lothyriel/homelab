@@ -1,0 +1,100 @@
+{
+    acme_dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+}
+
+# ACL block
+
+(local_only) {
+    @blocked not remote_ip 10.0.0.0/8 100.64.0.0/10 2804:4870:3008:7900::/64
+    header @blocked Content-Type text/html
+    respond @blocked `<html><body><h1>403 Forbidden</h1></body></html>` 403
+}
+
+# ---- Public ----
+
+immich.loty.click {
+    reverse_proxy 10.0.0.10:2283
+}
+
+pocket-planner.loty.click {
+    reverse_proxy 10.0.0.10:8081
+}
+
+jellyfin.loty.click {
+    reverse_proxy 10.0.0.10:8096
+}
+
+qbit.loty.click {
+    reverse_proxy 10.0.0.10:8080
+}
+
+# ---- local/vpn ----
+
+cockpit.loty.click {
+    import local_only
+    reverse_proxy 10.0.0.10:9090 {
+        transport http {
+            tls_insecure_skip_verify
+        }
+    }
+}
+
+sonarr.loty.click {
+    import local_only
+    reverse_proxy 10.0.0.10:8989
+}
+
+radarr.loty.click {
+    import local_only
+    reverse_proxy 10.0.0.10:7878
+}
+
+prowlarr.loty.click {
+    import local_only
+    reverse_proxy 10.0.0.10:9696
+}
+
+rtc.loty.click {
+    import local_only
+    reverse_proxy 10.0.0.10:1984
+}
+
+filebrowser.loty.click {
+    import local_only 
+    reverse_proxy 10.0.0.10:9100
+}
+
+cam_padel.loty.click {
+    import local_only   
+    reverse_proxy 10.0.0.10:8200
+}
+
+authelia.loty.click {
+    import local_only
+    reverse_proxy 10.0.0.10:9091
+}
+
+bazarr.loty.click {
+    import local_only
+    reverse_proxy 10.0.0.10:6767
+}
+
+cam.loty.click {
+    import local_only
+    reverse_proxy 10.0.0.10:5000
+}
+
+padel.loty.click {
+    import local_only
+    reverse_proxy 100.83.118.3:8080
+}
+
+# ---- catch all redirect ----
+
+*.loty.click, loty.click {
+    tls {
+        dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+    }
+    
+    redir https://www.linkedin.com/in/lothyriel 302
+}
