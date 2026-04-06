@@ -15,12 +15,17 @@
 # -----------------------------------------------------------------------------
 loty.click {
     view lan {
-	expr incidr(client_ip(), '10.0.0.0/8')
+	expr incidr(client_ip(), '10.0.0.0/8') || incidr(client_ip(), '{$IPV6_PREFIX}::/64')
     }
 
     template IN A {
-        match .*\.loty\.click
+        match ^(.*\.)?loty\.click\.$
         answer "{{ .Name }} 86400 IN A 10.0.0.10"
+    }
+
+    template IN AAAA {
+        match ^(.*\.)?loty\.click\.$
+        answer "{{ .Name }} 86400 IN AAAA {$IPV6_PREFIX}:6a1d:efff:fe3d:4a76"
     }
 
     cache
@@ -32,12 +37,17 @@ loty.click {
 # -----------------------------------------------------------------------------
 loty.click {
     view vpn {
-        expr incidr(client_ip(), '100.64.0.0/10')
+        expr incidr(client_ip(), '100.64.0.0/10') || incidr(client_ip(), 'fd7a:115c:a1e0::/48')
     }
 
     template IN A {
-        match .*\.loty\.click
+        match ^(.*\.)?loty\.click\.$
         answer "{{ .Name }} 86400 IN A 100.83.54.110"
+    }
+
+    template IN AAAA {
+        match ^(.*\.)?loty\.click\.$
+        answer "{{ .Name }} 86400 IN AAAA fd7a:115c:a1e0::2001:36b3"
     }
 
     cache
