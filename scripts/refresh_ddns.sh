@@ -4,3 +4,5 @@
 echo "updated *.loty.click"
 ~/homelab/scripts/cloudflare/update_record.sh cf8d1ae4447f1fd1a9db3c0362fdeef2 "loty.click" &&
 echo "updated loty.click"
+
+~/homelab/scripts/update_prefix.sh
