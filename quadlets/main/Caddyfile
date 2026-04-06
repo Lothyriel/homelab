@@ -69,11 +69,6 @@ filebrowser.loty.click {
     reverse_proxy host.containers.internal:9100
 }
 
-cam_padel.loty.click {
-    import local_only   
-    reverse_proxy host.containers.internal:8200
-}
-
 authelia.loty.click {
     import local_only
     reverse_proxy host.containers.internal:9091
@@ -89,9 +84,16 @@ cam.loty.click {
     reverse_proxy host.containers.internal:5000
 }
 
+# ---- padel ----
+
 padel.loty.click {
     import local_only
     reverse_proxy 100.83.118.3:8080
+}
+
+cam_padel.loty.click {
+    import local_only
+    reverse_proxy host.containers.internal:8200
 }
 
 # ---- catch all redirect ----
