@@ -3,8 +3,6 @@
 	output stdout
         level DEBUG
     }
-
-    acme_dns cloudflare {env.CLOUDFLARE_API_TOKEN}
 }
 
 # ACL block
