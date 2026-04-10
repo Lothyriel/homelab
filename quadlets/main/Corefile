@@ -15,7 +15,7 @@
 # -----------------------------------------------------------------------------
 loty.click {
     view lan {
-	expr incidr(client_ip(), '10.0.0.0/8') || incidr(client_ip(), '{$IPV6_PREFIX}::/64')
+	expr incidr(client_ip(), '10.0.0.0/8') || incidr(client_ip(), '{$IPV6_PREFIX}::/56')
     }
 
     template IN A {
@@ -43,11 +43,6 @@ loty.click {
     template IN A {
         match ^(.*\.)?loty\.click\.$
         answer "{{ .Name }} 86400 IN A 100.83.54.110"
-    }
-
-    template IN AAAA {
-        match ^(.*\.)?loty\.click\.$
-        answer "{{ .Name }} 86400 IN AAAA fd7a:115c:a1e0::2001:36b3"
     }
 
     cache
