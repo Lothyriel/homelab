@@ -31,6 +31,10 @@ qbit.loty.click {
     reverse_proxy host.containers.internal:8080
 }
 
+pc.loty.click {
+    reverse_proxy 10.0.0.5:8080
+}
+
 # ---- local/vpn ----
 
 cockpit.loty.click {
