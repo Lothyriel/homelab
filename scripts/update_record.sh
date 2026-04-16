@@ -7,7 +7,7 @@ set -eu
 RECORD_ID="$1"
 NAME="$2"
 
-IPV6=$(ip -6 addr show scope global | awk '/64/ {print $2}' | cut -d/ -f1)
+IPV6=$(ip -6 addr show scope global | awk '/64/ {print $2}' | cut -d/ -f1 | grep -vE '^(fd|fc|fe80)' | head -n1)
 TS=$(date -Is)
 
 curl -fsS \
