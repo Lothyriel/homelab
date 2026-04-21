@@ -33,9 +33,9 @@ qbit.loty.click {
 
 # ---- local/vpn ----
 
-pc.loty.click {
+dev.loty.click {
     import local_only
-    reverse_proxy 10.0.0.5:8080
+    reverse_proxy 10.0.0.5:9000
 }
 
 cockpit.loty.click {
