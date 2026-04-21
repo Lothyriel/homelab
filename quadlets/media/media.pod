@@ -15,6 +15,9 @@ PublishPort=9100:9100
 PublishPort=8096:8096
 # qBittorrent
 PublishPort=8080:8080
+# qbittorrent
+PublishPort=6881:6881/tcp
+PublishPort=6881:6881/udp
 # prowlarr
 PublishPort=9696:9696
 # radarr
