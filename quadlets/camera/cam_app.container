@@ -9,5 +9,9 @@ ContainerName=cam-rs
 Image=ghcr.io/lothyriel/cam_rs:latest
 
 EnvironmentFile=.env
+Environment=AI_ENABLED=false
+
+AddDevice=/dev/dri
+GroupAdd=video
 
 AutoUpdate=registry

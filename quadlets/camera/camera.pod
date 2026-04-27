@@ -13,3 +13,5 @@ PodName=camera
 PublishPort=1984:1984
 # app
 PublishPort=5000:5000
+# rtsp
+PublishPort=554:8554
