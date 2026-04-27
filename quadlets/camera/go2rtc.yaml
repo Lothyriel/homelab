@@ -4,6 +4,9 @@ log:
 api:
   listen: ":1984"
 
+preload:
+  cam: "video&audio"
+
 streams:
   cam:
     - ${RTSP_URL}
