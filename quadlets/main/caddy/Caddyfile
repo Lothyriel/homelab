@@ -16,7 +16,7 @@
 # ---- Public ----
 
 rinha-leaderboard.loty.click {
-    reverse_proxy host.containers.internal:3000
+    redir https://rinhadebackend.com.br/ 302
 }
 
 immich.loty.click {
