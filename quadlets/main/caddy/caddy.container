@@ -8,7 +8,7 @@ Pod=main.pod
 ContainerName=caddy
 
 Image=localhost/caddy:latest
-AutoUpdate=registry
+AutoUpdate=local
 
 Volume=./Caddyfile:/etc/caddy/Caddyfile:Z
 Volume=%h/caddy/data:/data:Z

@@ -1,0 +1,6 @@
+[Unit]
+Description=Rebuild caddy image
+
+[Service]
+Type=oneshot
+ExecStart=podman build -t caddy %h/homelab/quadlets/main/caddy
