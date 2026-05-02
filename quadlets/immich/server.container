@@ -8,8 +8,8 @@ Pod=immich.pod
 ContainerName=immich_server
 Image=ghcr.io/immich-app/immich-server:v2
 
-Volume=/data/photos/library:/data:Z
-Volume=/data/photos/ext:/photos:Z
+Volume=/data/photos/immich:/data:Z
+Volume=/data/photos/external:/photos:Z
 Volume=/etc/localtime:/etc/localtime:ro
 
 EnvironmentFile=.env
