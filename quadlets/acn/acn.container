@@ -1,0 +1,16 @@
+[Unit]
+Description=ACN Discord Bot
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Pod=acn.pod
+ContainerName=acn-bot
+Image=ghcr.io/lothyriel/acn_r:latest
+AutoUpdate=registry
+
+EnvironmentFile=.env
+Volume=./appsettings_prd.json:/app/appsettings_prd.json:ro,Z
+
+[Install]
+WantedBy=default.target

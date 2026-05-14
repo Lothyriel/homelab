@@ -1,0 +1,20 @@
+[Unit]
+Description=ACN Lavalink
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Pod=acn.pod
+ContainerName=acn-lavalink
+Image=ghcr.io/lavalink-devs/lavalink:4.2.2
+AutoUpdate=registry
+Memory=1024m
+
+Environment=SERVER_PORT=2333
+Environment=LAVALINK_SERVER_PASSWORD=
+Environment=LAVALINK_SERVER_SOURCES_YOUTUBE=false
+Environment=LAVALINK_PLUGINS_0_DEPENDENCY=dev.lavalink.youtube:youtube-plugin:1.18.1
+Environment=LAVALINK_PLUGINS_0_SNAPSHOT=false
+
+[Install]
+WantedBy=default.target

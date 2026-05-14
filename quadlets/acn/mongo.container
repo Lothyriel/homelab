@@ -1,0 +1,16 @@
+[Unit]
+Description=ACN MongoDB
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Pod=acn.pod
+ContainerName=acn-mongo
+Image=docker.io/library/mongo:8.3.2
+AutoUpdate=registry
+
+Environment=GLIBC_TUNABLES=glibc.pthread.rseq=1
+Volume=%h/acn/data:/data/db:Z
+
+[Install]
+WantedBy=default.target
