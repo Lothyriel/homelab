@@ -27,10 +27,6 @@ jellyfin.loty.click {
     reverse_proxy host.containers.internal:8096
 }
 
-qbit.loty.click {
-    reverse_proxy host.containers.internal:8080
-}
-
 # ---- local/vpn ----
 
 dev.loty.click {
@@ -45,6 +41,11 @@ cockpit.loty.click {
             tls_insecure_skip_verify
         }
     }
+}
+
+qbit.loty.click	{
+    import local_only
+    reverse_proxy host.containers.internal:8080
 }
 
 sonarr.loty.click {

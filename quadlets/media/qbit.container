@@ -12,6 +12,7 @@ Volume=%h/qbit/config:/config:Z
 Volume=/data/media:/media:z
 Environment=PUID=0
 Environment=PGID=0
+Environment=QBT_LEGAL_NOTICE=confirm
 
 [Service]
 Restart=always
