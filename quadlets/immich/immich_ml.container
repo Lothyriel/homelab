@@ -6,7 +6,7 @@ Wants=network-online.target
 [Container]
 Pod=immich.pod
 ContainerName=immich_machine_learning
-Image=ghcr.io/immich-app/immich-machine-learning:v2
+Image=ghcr.io/immich-app/immich-machine-learning:v3
 
 Volume=immich-model-cache:/cache
 

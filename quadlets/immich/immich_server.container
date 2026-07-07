@@ -6,7 +6,7 @@ Wants=network-online.target
 [Container]
 Pod=immich.pod
 ContainerName=immich_server
-Image=ghcr.io/immich-app/immich-server:v2
+Image=ghcr.io/immich-app/immich-server:v3
 
 Volume=/data/photos/immich:/data:Z
 Volume=/data/photos/external:/photos:Z
