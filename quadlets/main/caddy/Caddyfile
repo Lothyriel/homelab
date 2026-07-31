@@ -8,7 +8,7 @@
 # ACL block
 
 (local_only) {
-    @blocked not remote_ip 10.0.0.0/8 100.64.0.0/10 {env.IPV6_PREFIX}::/64
+    @blocked not remote_ip 10.0.0.0/8 100.64.0.0/10 {env.IPV6_PREFIX}::/56
     header @blocked Content-Type text/html
     respond @blocked `<html><body><h1>403 Forbidden</h1></body></html>` 403
 }
