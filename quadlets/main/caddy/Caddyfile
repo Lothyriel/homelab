@@ -100,12 +100,27 @@ cam_padel.loty.click {
     reverse_proxy host.containers.internal:8200
 }
 
-# ---- catch all redirect ----
+# ---- static pages ----
 
-*.loty.click, loty.click {
+*.loty.click {
     tls {
         dns cloudflare {env.CLOUDFLARE_API_TOKEN}
     }
-    
+
+    root * /srv
+
+    @homepage path /
+    rewrite @homepage /{labels.2}.html
+
+    file_server
+}
+
+# ---- apex redirect ----
+
+loty.click {
+    tls {
+        dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+    }
+
     redir https://www.linkedin.com/in/lothyriel 302
 }
