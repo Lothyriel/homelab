@@ -7,6 +7,7 @@ After=media.pod
 Pod=media.pod
 Image=lscr.io/linuxserver/radarr:latest
 ContainerName=radarr
+AutoUpdate=registry
 
 Volume=%h/arr/radarr:/config:Z
 Volume=/data/media:/media:z

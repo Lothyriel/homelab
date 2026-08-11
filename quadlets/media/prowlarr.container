@@ -7,6 +7,7 @@ After=media.pod
 Pod=media.pod
 Image=lscr.io/linuxserver/prowlarr:latest
 ContainerName=prowlarr
+AutoUpdate=registry
 
 Volume=%h/arr/prowlarr:/config:Z
 
