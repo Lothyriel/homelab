@@ -18,6 +18,16 @@ self-hosted stack.
 Registration is invite-only. Create an invite with:
 
 ```sh
+./create-invite.sh alice
+```
+
+The optional argument is a label used to identify who the code is for. The
+script generates a random suffix, inserts the code into `account_invites`, and
+prints it. Without an argument it uses `guest`.
+
+To manage invites manually, open MongoDB with:
+
+```sh
 podman exec -it stoat-database mongosh
 ```
 
@@ -25,7 +35,7 @@ Then run:
 
 ```javascript
 use revolt
-db.invites.insertOne({ _id: "choose-a-long-invite-code" })
+db.account_invites.insertOne({ _id: "choose-a-long-invite-code" })
 ```
 
 The HTTP entry point is published on host port 8880 so the containerized main

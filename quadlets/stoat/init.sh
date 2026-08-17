@@ -20,11 +20,11 @@ livekit_secret=$(openssl rand -hex 24)
 
 umask 077
 printf '%s\n' \
-    "REVOLT__PUSHD__VAPID__PRIVATE_KEY='$vapid_private'" \
-    "REVOLT__PUSHD__VAPID__PUBLIC_KEY='$vapid_public'" \
-    "REVOLT__FILES__ENCRYPTION_KEY='$file_key'" \
-    "REVOLT__API__LIVEKIT__NODES__WORLDWIDE__KEY='$livekit_key'" \
-    "REVOLT__API__LIVEKIT__NODES__WORLDWIDE__SECRET='$livekit_secret'" > .env
+    "REVOLT__PUSHD__VAPID__PRIVATE_KEY=$vapid_private" \
+    "REVOLT__PUSHD__VAPID__PUBLIC_KEY=$vapid_public" \
+    "REVOLT__FILES__ENCRYPTION_KEY=$file_key" \
+    "REVOLT__API__LIVEKIT__NODES__WORLDWIDE__KEY=$livekit_key" \
+    "REVOLT__API__LIVEKIT__NODES__WORLDWIDE__SECRET=$livekit_secret" > .env
 
 printf '%s\n' \
     'rtc:' \
