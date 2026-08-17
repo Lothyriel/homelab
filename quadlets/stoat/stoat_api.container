@@ -1,0 +1,17 @@
+[Unit]
+Description=Stoat API
+After=stoat_database.service stoat_redis.service stoat_rabbit.service
+Requires=stoat_database.service stoat_redis.service stoat_rabbit.service
+
+[Container]
+Pod=stoat.pod
+ContainerName=stoat-api
+Image=ghcr.io/stoatchat/api:v0.15.1
+EnvironmentFile=.env
+Volume=./Revolt.toml:/Revolt.toml:ro,Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

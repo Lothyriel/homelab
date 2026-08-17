@@ -1,0 +1,17 @@
+[Unit]
+Description=Stoat Events
+After=stoat_database.service stoat_redis.service
+Requires=stoat_database.service stoat_redis.service
+
+[Container]
+Pod=stoat.pod
+ContainerName=stoat-events
+Image=ghcr.io/stoatchat/events:v0.15.1
+EnvironmentFile=.env
+Volume=./Revolt.toml:/Revolt.toml:ro,Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

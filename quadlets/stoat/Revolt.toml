@@ -1,0 +1,42 @@
+[database]
+mongodb = "mongodb://127.0.0.1:27017"
+redis = "redis://127.0.0.1:6379/"
+
+[rabbit]
+host = "127.0.0.1"
+username = "rabbituser"
+password = "rabbitpass"
+
+[hosts]
+app = "https://chat.loty.click"
+api = "https://chat.loty.click/api"
+events = "wss://chat.loty.click/ws"
+autumn = "https://chat.loty.click/autumn"
+january = "https://chat.loty.click/january"
+gifbox = "https://chat.loty.click/gifbox"
+
+[hosts.livekit]
+worldwide = "wss://chat.loty.click/livekit"
+
+[api.registration]
+invite_only = true
+
+[api.livekit.nodes.worldwide]
+url = "http://127.0.0.1:7880"
+lat = 0.0
+lon = 0.0
+
+[files.s3]
+endpoint = "http://127.0.0.1:9000"
+region = "minio"
+access_key_id = "minioautumn"
+secret_access_key = "minioautumn"
+default_bucket = "revolt-uploads"
+
+[features.limits.new_user]
+video_resolution = [1920, 1080]
+video_aspect_ratio = [0.3, 10]
+
+[features.limits.default]
+video_resolution = [1920, 1080]
+video_aspect_ratio = [0.3, 10]

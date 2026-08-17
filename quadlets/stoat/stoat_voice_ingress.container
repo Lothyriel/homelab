@@ -1,0 +1,17 @@
+[Unit]
+Description=Stoat Voice Ingress
+After=stoat_database.service stoat_rabbit.service
+Requires=stoat_database.service stoat_rabbit.service
+
+[Container]
+Pod=stoat.pod
+ContainerName=stoat-voice-ingress
+Image=ghcr.io/stoatchat/voice-ingress:v0.15.1
+EnvironmentFile=.env
+Volume=./Revolt.toml:/Revolt.toml:ro,Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

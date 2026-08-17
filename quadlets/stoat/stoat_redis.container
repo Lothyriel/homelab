@@ -1,0 +1,14 @@
+[Unit]
+Description=Stoat Valkey
+
+[Container]
+Pod=stoat.pod
+ContainerName=stoat-redis
+Image=docker.io/valkey/valkey:9-alpine
+Volume=%h/stoat/valkey:/data:Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

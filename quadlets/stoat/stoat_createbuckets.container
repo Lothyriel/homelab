@@ -1,0 +1,18 @@
+[Unit]
+Description=Create Stoat MinIO buckets
+After=stoat_minio.service
+Requires=stoat_minio.service
+
+[Container]
+Pod=stoat.pod
+ContainerName=stoat-createbuckets
+Image=docker.io/minio/mc:latest
+Entrypoint=/bin/sh
+Exec=-c "until mc alias set stoat http://127.0.0.1:9000 minioautumn minioautumn; do sleep 1; done; mc mb --ignore-existing stoat/revolt-uploads"
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target

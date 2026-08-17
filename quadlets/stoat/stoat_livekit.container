@@ -1,0 +1,17 @@
+[Unit]
+Description=Stoat LiveKit
+After=stoat_redis.service
+Requires=stoat_redis.service
+
+[Container]
+Pod=stoat.pod
+ContainerName=stoat-livekit
+Image=ghcr.io/stoatchat/livekit-server:v1.9.13
+Exec=--config /etc/livekit.yml
+Volume=./livekit.yml:/etc/livekit.yml:ro,Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

@@ -4,3 +4,4 @@
 
 timers/*.target.wants/*
 /quadlets/main/blocklist.hosts
+/quadlets/stoat/livekit.yml

@@ -27,6 +27,10 @@ jellyfin.loty.click {
     reverse_proxy host.containers.internal:8096
 }
 
+chat.loty.click {
+    reverse_proxy host.containers.internal:8880
+}
+
 # ---- local/vpn ----
 
 dev.loty.click {

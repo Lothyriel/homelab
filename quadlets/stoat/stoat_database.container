@@ -1,0 +1,14 @@
+[Unit]
+Description=Stoat MongoDB
+
+[Container]
+Pod=stoat.pod
+ContainerName=stoat-database
+Image=docker.io/library/mongo:8
+Volume=%h/stoat/database:/data/db:Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

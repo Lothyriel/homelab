@@ -1,0 +1,15 @@
+[Unit]
+Description=Stoat Tenor Proxy
+
+[Container]
+Pod=stoat.pod
+ContainerName=stoat-gifbox
+Image=ghcr.io/stoatchat/gifbox:v0.15.1
+EnvironmentFile=.env
+Volume=./Revolt.toml:/Revolt.toml:ro,Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,40 @@
+:80 {
+    route /.well-known/stoat {
+        uri strip_prefix /.well-known/stoat
+        header Access-Control-Allow-Origin *
+        file_server {
+            root /stoat.json
+        }
+    }
+
+    route /api* {
+        uri strip_prefix /api
+        reverse_proxy 127.0.0.1:14702
+    }
+    route /ws {
+        uri strip_prefix /ws
+        reverse_proxy 127.0.0.1:14703
+    }
+    route /autumn* {
+        uri strip_prefix /autumn
+        reverse_proxy 127.0.0.1:14704
+    }
+    route /january* {
+        uri strip_prefix /january
+        reverse_proxy 127.0.0.1:14705
+    }
+    route /gifbox* {
+        uri strip_prefix /gifbox
+        reverse_proxy 127.0.0.1:14706
+    }
+    route /livekit* {
+        uri strip_prefix /livekit
+        reverse_proxy 127.0.0.1:7880
+    }
+    route /ingress* {
+        uri strip_prefix /ingress
+        reverse_proxy 127.0.0.1:8500
+    }
+
+    reverse_proxy 127.0.0.1:5000
+}

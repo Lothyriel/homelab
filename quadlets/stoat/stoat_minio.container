@@ -1,0 +1,17 @@
+[Unit]
+Description=Stoat MinIO
+
+[Container]
+Pod=stoat.pod
+ContainerName=stoat-minio
+Image=docker.io/minio/minio:latest
+Exec=server /data
+Environment=MINIO_ROOT_USER=minioautumn
+Environment=MINIO_ROOT_PASSWORD=minioautumn
+Volume=%h/stoat/minio:/data:Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

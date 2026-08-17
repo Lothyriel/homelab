@@ -1,0 +1,20 @@
+[Unit]
+Description=Stoat Web Client
+
+[Container]
+Pod=stoat.pod
+ContainerName=stoat-web
+Image=ghcr.io/stoatchat/for-web:0c31cf0
+Environment=REVOLT_PUBLIC_URL=https://chat.loty.click/api
+Environment=VITE_API_URL=https://chat.loty.click/api
+Environment=VITE_WS_URL=wss://chat.loty.click/ws
+Environment=VITE_MEDIA_URL=https://chat.loty.click/autumn
+Environment=VITE_PROXY_URL=https://chat.loty.click/january
+Environment=VITE_GIFBOX_URL=https://chat.loty.click/gifbox
+Environment=VITE_CFG_ENABLE_VIDEO=true
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

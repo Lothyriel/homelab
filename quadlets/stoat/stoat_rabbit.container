@@ -1,0 +1,16 @@
+[Unit]
+Description=Stoat RabbitMQ
+
+[Container]
+Pod=stoat.pod
+ContainerName=stoat-rabbit
+Image=docker.io/library/rabbitmq:4
+Environment=RABBITMQ_DEFAULT_USER=rabbituser
+Environment=RABBITMQ_DEFAULT_PASS=rabbitpass
+Volume=%h/stoat/rabbit:/var/lib/rabbitmq:Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

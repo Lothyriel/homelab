@@ -1,0 +1,16 @@
+[Unit]
+Description=Stoat Metadata and Image Proxy
+After=stoat_database.service
+
+[Container]
+Pod=stoat.pod
+ContainerName=stoat-january
+Image=ghcr.io/stoatchat/proxy:v0.15.1
+EnvironmentFile=.env
+Volume=./Revolt.toml:/Revolt.toml:ro,Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,17 @@
+[Unit]
+Description=Stoat Task Daemon
+After=stoat_database.service stoat_createbuckets.service
+Requires=stoat_database.service stoat_createbuckets.service
+
+[Container]
+Pod=stoat.pod
+ContainerName=stoat-crond
+Image=ghcr.io/stoatchat/crond:v0.15.1
+EnvironmentFile=.env
+Volume=./Revolt.toml:/Revolt.toml:ro,Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
