@@ -5,6 +5,7 @@ Wants=network-online.target
 
 [Pod]
 PodName=stoat
+AddHost=chat.loty.click:host-gateway
 PublishPort=8880:80/tcp
 PublishPort=7881:7881/tcp
 PublishPort=50000-50100:50000-50100/udp

@@ -19,6 +19,14 @@
         uri strip_prefix /autumn
         reverse_proxy 127.0.0.1:14704
     }
+
+    # The current web client may construct file URLs from the origin root even
+    # when Autumn is configured under /autumn. Keep these compatibility paths
+    # until the client consistently preserves the configured path prefix.
+    @autumn_files path /attachments/* /avatars/* /backgrounds/* /banners/* /emojis/* /icons/*
+    route @autumn_files {
+        reverse_proxy 127.0.0.1:14704
+    }
     route /january* {
         uri strip_prefix /january
         reverse_proxy 127.0.0.1:14705
