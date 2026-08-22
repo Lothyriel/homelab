@@ -15,7 +15,8 @@ self-hosted stack.
 5. Forward `7881/tcp` and `50000-50100/udp` through the host firewall and
    router for voice/video.
 
-Registration is invite-only. Create an invite with:
+Registration is open and does not require an invite code. If invite-only
+registration is enabled in `Revolt.toml`, create an invite with:
 
 ```sh
 ./create-invite.sh alice

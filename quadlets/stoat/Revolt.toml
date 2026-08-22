@@ -19,7 +19,7 @@ gifbox = "https://chat.loty.click/gifbox"
 worldwide = "wss://chat.loty.click/livekit"
 
 [api.registration]
-invite_only = true
+invite_only = false
 
 [api.livekit.nodes.worldwide]
 url = "http://127.0.0.1:7880"
