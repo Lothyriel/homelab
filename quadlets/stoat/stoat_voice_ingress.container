@@ -12,6 +12,7 @@ EnvironmentFile=.env
 Volume=./Revolt.toml:/Revolt.toml:ro,Z
 
 [Service]
+ExecStartPre=/usr/bin/bash %h/homelab/quadlets/stoat/wait-for-rabbit.sh stoat-rabbit
 Restart=always
 
 [Install]
