@@ -1,5 +1,7 @@
 [Unit]
 Description=Stoat Web Client
+PartOf=stoat-pod.service
+After=stoat-pod.service
 
 [Container]
 Pod=stoat.pod

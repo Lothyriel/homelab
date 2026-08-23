@@ -1,6 +1,7 @@
 [Unit]
 Description=Stoat File Server
-After=stoat_database.service stoat_createbuckets.service
+PartOf=stoat-pod.service
+After=stoat-pod.service stoat_database.service stoat_createbuckets.service
 Requires=stoat_database.service stoat_createbuckets.service
 
 [Container]

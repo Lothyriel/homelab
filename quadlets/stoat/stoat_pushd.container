@@ -1,6 +1,7 @@
 [Unit]
 Description=Stoat Push Daemon
-After=stoat_database.service stoat_redis.service stoat_rabbit.service
+PartOf=stoat-pod.service
+After=stoat-pod.service stoat_database.service stoat_redis.service stoat_rabbit.service
 Requires=stoat_database.service stoat_redis.service stoat_rabbit.service
 
 [Container]

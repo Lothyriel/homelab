@@ -1,6 +1,7 @@
 [Unit]
 Description=Stoat Internal Caddy
-After=stoat_api.service stoat_events.service stoat_autumn.service stoat_january.service stoat_gifbox.service stoat_livekit.service stoat_voice_ingress.service stoat_web.service
+PartOf=stoat-pod.service
+After=stoat-pod.service stoat_api.service stoat_events.service stoat_autumn.service stoat_january.service stoat_gifbox.service stoat_livekit.service stoat_voice_ingress.service stoat_web.service
 
 [Container]
 Pod=stoat.pod

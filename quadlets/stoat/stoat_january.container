@@ -1,6 +1,7 @@
 [Unit]
 Description=Stoat Metadata and Image Proxy
-After=stoat_database.service
+PartOf=stoat-pod.service
+After=stoat-pod.service stoat_database.service
 
 [Container]
 Pod=stoat.pod

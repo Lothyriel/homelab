@@ -1,6 +1,7 @@
 [Unit]
 Description=Stoat Events
-After=stoat_database.service stoat_redis.service
+PartOf=stoat-pod.service
+After=stoat-pod.service stoat_database.service stoat_redis.service
 Requires=stoat_database.service stoat_redis.service
 
 [Container]
