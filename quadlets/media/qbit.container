@@ -13,7 +13,10 @@ Volume=/data/media:/media:z
 Environment=PUID=0
 Environment=PGID=0
 Environment=QBT_LEGAL_NOTICE=confirm
+StopTimeout=60
 
 [Service]
 Restart=always
+RestartSec=10s
+TimeoutStopSec=90s
 CPUWeight=30
